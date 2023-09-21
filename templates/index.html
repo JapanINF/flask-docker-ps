@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>プロセス(Dockerコンテナ)一覧</title>
+    <!-- Materialize CSSのCDNリンクを追加 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="center-align">プロセス(Dockerコンテナ)一覧</h1>
+      <table class="highlight responsive-table">
+	<thead>
+	  <tr>
+	    <th>コンテナ名</th>
+	    <th>イメージ</th>
+	    <th>ステータス</th>
+	  </tr>
+	</thead>
+	<tbody>
+	  {% for container in containers %}
+	  <tr>
+	    <td>{{ container.name }}</td>
+	    <td>{{ container.image.short_id }}</td>
+	    <td>{{ container.status }}</td>
+	  </tr>
+	  {% endfor %}
+	</tbody>
+      </table>
+    </div>
+    <!-- Materialize JavaScriptのCDNリンクを追加 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
+</html>
