@@ -19,7 +19,7 @@ def index():
 
     # 実行中のコンテナの一覧を取得
     containers = client.containers()
-    container_status_list = []
+    container_info_list = []
     for container in containers:
         info = container_info(
             container["Names"][0],
@@ -28,10 +28,10 @@ def index():
             container["Status"],
         )
         print(container["Names"][0])
-        container_status_list.append(info)
+        container_info_list.append(info)
 
     # コンテナ情報をテンプレートに渡す
-    return render_template("index.html", containers=container_status_list)
+    return render_template("index.html", containers=container_info_list)
 
 
 if __name__ == "__main__":
