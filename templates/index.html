@@ -13,15 +13,17 @@
 	  <tr>
 	    <th>コンテナ名</th>
 	    <th>イメージ</th>
-	    <th>ステータス</th>
+	    <th>状態</th>
+		<th>起動時間</th>
 	  </tr>
 	</thead>
 	<tbody>
 	  {% for container in containers %}
 	  <tr>
 	    <td>{{ container.name }}</td>
-	    <td>{{ container.image.short_id }}</td>
-	    <td>{{ container.status }}</td>
+	    <td>{{ container.image }}</td>
+		<td>{{ container.state }}</td>
+		<td>{{ container.status }}</td>
 	  </tr>
 	  {% endfor %}
 	</tbody>
