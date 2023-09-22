@@ -3,30 +3,33 @@
   <head>
     <title>プロセス(Dockerコンテナ)一覧</title>
     <!-- Materialize CSSのCDNリンクを追加 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
   </head>
   <body>
     <div class="container">
       <h1 class="center-align">プロセス(Dockerコンテナ)一覧</h1>
       <table class="highlight responsive-table">
-	<thead>
-	  <tr>
-	    <th>コンテナ名</th>
-	    <th>イメージ</th>
-	    <th>状態</th>
-		<th>起動時間</th>
-	  </tr>
-	</thead>
-	<tbody>
-	  {% for container in containers %}
-	  <tr>
-	    <td>{{ container.name }}</td>
-	    <td>{{ container.image }}</td>
-		<td>{{ container.state }}</td>
-		<td>{{ container.status }}</td>
-	  </tr>
-	  {% endfor %}
-	</tbody>
+        <thead>
+          <tr>
+            <th>コンテナ名</th>
+            <th>イメージ</th>
+            <th>状態</th>
+            <th>起動時間</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for container in containers %}
+          <tr>
+            <td>{{ container.name }}</td>
+            <td>{{ container.image }}</td>
+            <td>{{ container.state }}</td>
+            <td>{{ container.status }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
       </table>
     </div>
     <!-- Materialize JavaScriptのCDNリンクを追加 -->
