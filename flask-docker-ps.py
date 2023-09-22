@@ -27,7 +27,6 @@ def index():
             container["State"],
             container["Status"],
         )
-        print(container["Names"][0])
         container_info_list.append(info)
 
     # コンテナ情報をテンプレートに渡す
